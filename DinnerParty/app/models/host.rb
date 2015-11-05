@@ -19,7 +19,9 @@ class Host < ActiveRecord::Base
   end
 
   def add_to_attendees(dinner)
+  # probably should be in a controller action
     @guest = Guest.find_or_create_by(user_id: self.user_id)
     @invitation = Invitation.create(dinner_id: dinner.id, guest_id: @guest.id, status: "Attending")
   end
+
 end

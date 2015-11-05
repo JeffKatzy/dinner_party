@@ -9,6 +9,7 @@ class InvitationsController < ApplicationController
   def create
     @dinner = Dinner.find(params[:dinner_id])
     invitation_params[:user_ids].each do |user_id|
+      # double negative?
       if !user_id.empty?
         @guest = Guest.find_or_create_by(user_id: user_id)
         @dinner.invitations.build(guest_id: @guest.id)

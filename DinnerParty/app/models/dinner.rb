@@ -30,6 +30,8 @@ class Dinner < ActiveRecord::Base
   end
 
   def assigned_dishes_for_guest(guest) 
+    # this method is not SRP - 
+    # its two uses are finding the assigned dishes and display of information
     guest_dish_assignments = dish_assignments.where(guest_id: guest.id)
     guest_dish_assignments.map do |dish_assignment|
       dish_assignment.menu_item.name

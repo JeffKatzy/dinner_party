@@ -14,6 +14,7 @@ class UserViewObject
   end
 
   def find_recipes(invitation)
+    # I don't think this belongs in a view object, it doesnt seem purely presentation related
     return_array = []
     guest_dish_assignments = invitation.dinner.dish_assignments.where(guest_id: user.guest.id)
     guest_dish_assignments.map do |dish_assignment|

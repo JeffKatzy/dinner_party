@@ -3,6 +3,7 @@
 <h3>Invite Guests</h3>
  
 <% if @available_users.empty? %>
+<!-- Switch this logic to be if @avaiable_users.any? render form, else ... -->
   <%= "No more users to invite :(" %>
 <% else %>
   <%= render 'form' %>

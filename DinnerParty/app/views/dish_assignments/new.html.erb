@@ -3,9 +3,11 @@
 <%= form_for [@dinner, @dish_assignment] do |f| %>
   <ul>
   <% @menu_items_by_course.each do |course_array| %>
+  <!-- There is a lot of logic in here, again think about bringing into your view object  -->
     <% if course_array.any? %>
       <h2><%= course_array.first.dish.course %></h2>
       <% course_array.each do |menu_item| %>
+
       <% if @dishes_assigned.include?(menu_item.id) %>
         <li><%= view_object.guest_bringing_dish(menu_item) if menu_item.dish_assignment.guest %></li>
       <% else %>  

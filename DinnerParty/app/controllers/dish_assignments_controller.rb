@@ -1,6 +1,6 @@
 class DishAssignmentsController < ApplicationController
   before_action :find_dinner
-
+  # looks very good
   def new
     @dinner = Dinner.find(params[:dinner_id])
     @dish_assignment = DishAssignment.new
