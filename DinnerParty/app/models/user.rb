@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_by_provider_and_uid(auth_hash)
+    # cool
     User.find_by(provider: auth_hash[:provider], uid: auth_hash[:uid])
   end
 

@@ -35,7 +35,9 @@ class Dinner < ActiveRecord::Base
     guest_dish_assignments = dish_assignments.where(guest_id: guest.id)
     guest_dish_assignments.map do |dish_assignment|
       dish_assignment.menu_item.name
-    end.join(", ")   
+    end.join(", ")  
+     # Anytime I see join, its a tipoff the method has display purposes 
+     #and presention portion should be in a view object
   end
 
   private

@@ -8,7 +8,7 @@
 <h2>Guests</h2>
 <ul>
 <% @dinner.guests.each do |guest| %>
-<!-- Here I would use a view object -->
+<!-- Here I would use a view object especially for the logic about HOST -->
   <li><%= image_tag(guest.user.profile_picture) if guest.user.profile_picture %><%= guest.name %><%= " | Host" if guest.user_id == @dinner.host.user_id %></li>
 <% end %> 
 </ul>

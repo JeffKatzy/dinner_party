@@ -1,6 +1,7 @@
 <ul>
 <% @menu_items_by_course.each do |menu_item_by_course| %>
   <% if menu_item_by_course.any? %>
+    <!-- menu items without courses could have been filtered out in a controller -->
     <h2><%= menu_item_by_course.first.course %></h2>
       <% menu_item_by_course.each do |menu_item| %>
         <li>
